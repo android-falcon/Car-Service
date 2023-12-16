@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/it_calender"
+            android:icon="@drawable/img_calendar"
+            android:title="@string/summary_ticket" />
+        <item
+            android:id="@+id/it_aboutCo"
+            android:title="@string/about_falcons_soft"
+            android:icon="@drawable/img_info"
+            />
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc_home"
+    tools:context=".feature.sammaryTicket.presentaion.ui.SummaryTicketFragment">
+
+
+    <androidx.cardview.widget.CardView
+        app:layout_constraintRight_toRightOf="@id/et_search"
+        android:id="@+id/cv_date"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:background="@drawable/et_login"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_show"
+        app:layout_constraintLeft_toRightOf="@id/btn_show"
+        app:layout_constraintTop_toTopOf="@id/btn_show">
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/et_date"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:background="@color/float_transparent"
+            android:editable="false"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            tools:text="10/12/2023" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        app:layout_constraintRight_toLeftOf="@id/cv_date"
+        android:id="@+id/btn_show"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:background="@drawable/btn_custom"
+        android:text="@string/show"
+        app:layout_constraintLeft_toLeftOf="@id/et_search"
+        app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/et_login2"
+            android:hint="@string/ticket_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_tickets"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cv_date"
+        app:layout_constraintVertical_bias="0.0"
+        tools:listitem="@layout/row_tiket_new" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/br_gif"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_60sdp"
+        android:src="@drawable/br_loading"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

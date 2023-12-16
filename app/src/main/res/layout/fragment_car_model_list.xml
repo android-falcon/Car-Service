@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc_home"
+    tools:context=".feature.carModelList.CarModelListFragment">
+
+
+    <ImageView
+        android:layout_width="@dimen/_211sdp"
+        android:layout_height="@dimen/_41sdp"
+        android:layout_marginBottom="12dp"
+
+        android:src="@drawable/img_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/et_search"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_10sdp"
+        android:background="@drawable/et_login2"
+        android:hint="@string/ticket_search"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
+
+    <EditText
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/et_otherType"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginLeft="@dimen/_10sdp"
+        android:background="@drawable/et_login"
+        android:gravity="center"
+        app:layout_constraintRight_toLeftOf="@id/btn_add"
+        android:hint="@string/other_type_car"
+        app:layout_constraintBottom_toTopOf="@id/rv_cars"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_search" />
+    <androidx.cardview.widget.CardView
+        app:cardCornerRadius="@dimen/_7sdp"
+        android:id="@+id/btn_add"
+        app:layout_constraintTop_toTopOf="@id/et_otherType"
+        app:layout_constraintLeft_toRightOf="@id/et_otherType"
+        app:layout_constraintRight_toRightOf="@id/et_search"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_marginLeft="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
+        android:layout_height="@dimen/_30sdp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+
+            />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_cars"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_otherType"
+        tools:listitem="@layout/row_car_model" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

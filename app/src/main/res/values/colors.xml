@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#66564C</color>
+    <color name="colorPrimaryDark">#66564C</color>
+    <color name="colorAccent">#28262A</color>
+    <color name="colorBcMain">#28262A</color>
+    <color name="hintYellow">#E4E4E4</color>
+    <color name="red">#F57979</color>
+    <color name="redBlack">#EA1A1A</color>
+    <color name="gray">#ADADAD</color>
+    <color name="nion">#7CBBED</color>
+    <color name="nionHint">#AAD4F4</color>
+    <color name="green">#C2DCA3</color>
+    <color name="DarkGreen">#7BB03A</color>
+    <color name="transparent">#80RRGGBB</color>
+</resources>

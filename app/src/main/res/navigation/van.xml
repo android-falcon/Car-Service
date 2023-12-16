@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/van"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.carservice.feature.home.presentation.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+            android:id="@+id/summary_ticket"
+        android:name="com.example.carservice.feature.sammaryTicket.presentaion.ui.SummaryTicketFragment"
+        android:label="@string/summary_ticket"
+        tools:layout="@layout/fragment_summary_ticket" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.carservice.feature.detail.presintation.ui.DetailsFragment"
+        android:label="DetailsFragment" />
+    <fragment
+        android:id="@+id/employeeListFragment"
+        android:name="com.example.carservice.feature.employee.presentation.ui.EmployeeListFragment"
+        android:label="fragment_employee_list"
+        tools:layout="@layout/fragment_employee_list" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.carservice.feature.auth.presintation.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/technicalSetttingFragment"
+        android:name="com.example.carservice.feature.techincalSetting.presintation.ui.TechnicalSettingFragment"
+        android:label="fragment_technical_settting"
+        tools:layout="@layout/fragment_technical_settting" />
+    <fragment
+        android:id="@+id/addTicketFragment"
+        android:name="com.example.carservice.feature.addTicket.presintation.ui.AddTicketFragment"
+        android:label="fragment_add_ticket"
+        tools:layout="@layout/fragment_add_ticket" >
+        <action
+            android:id="@+id/action_addTicketFragment_to_carModelListFragment"
+            app:destination="@id/carModelListFragment" />
+        <action
+            android:id="@+id/action_addTicketFragment_to_createTicketFragment"
+            app:destination="@id/createTicketFragment" />
+        <action
+            android:id="@+id/action_addTicketFragment_to_carFragment"
+            app:destination="@id/carFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.carservice.feature.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+    <fragment
+        android:id="@+id/createTicketFragment"
+        android:name="com.example.carservice.feature.services.presentation.ui.CreateTicketFragment"
+        android:label="fragment_create_ticket"
+        tools:layout="@layout/fragment_create_ticket" />
+    <fragment
+        android:id="@+id/carFragment"
+        android:name="com.example.carservice.feature.addTicket.presintation.ui.CarFragment"
+        android:label="fragment_car"
+        tools:layout="@layout/fragment_car" >
+        <action
+            android:id="@+id/action_carFragment_to_addTicketFragment"
+            app:destination="@id/addTicketFragment" />
+        <action
+            android:id="@+id/action_carFragment_to_addTicketFragment2"
+            app:destination="@id/addTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardSummaryFragment"
+        android:name="com.example.carservice.feature.sammaryTicket.presentaion.ui.CardSummaryFragment"
+        android:label="fragment_card_sammary"
+        tools:layout="@layout/fragment_card_sammary" />
+    <fragment
+        android:id="@+id/carModelListFragment"
+        android:name="com.example.carservice.feature.carModelList.CarModelListFragment"
+        android:label="fragment_car_model_list"
+        tools:layout="@layout/fragment_car_model_list" >
+        <action
+            android:id="@+id/action_carModelListFragment_to_addTicketFragment"
+            app:destination="@id/addTicketFragment" />
+    </fragment>
+</navigation>

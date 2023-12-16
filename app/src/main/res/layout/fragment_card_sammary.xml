@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.carservice.feature.home.domain.model.TicketResponse" />
+    </data>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bc_home"
+        tools:context=".feature.sammaryTicket.presentaion.ui.CardSummaryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="@dimen/_211sdp"
+                android:layout_height="@dimen/_41sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="12dp"
+                android:src="@drawable/img_logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_11sdp"
+                android:layout_marginTop="@dimen/_70sdp"
+                android:padding="@dimen/_5sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_18sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_10sdp">
+
+                        <ImageView
+                            android:id="@+id/iv_plateimg"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_marginRight="@dimen/_3sdp"
+                            android:src="@drawable/img_car_id_plate"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_plateNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/iv_plateimg"
+                            app:layout_constraintLeft_toLeftOf="@id/iv_plateimg"
+                            app:layout_constraintRight_toRightOf="@id/iv_plateimg"
+                            app:layout_constraintTop_toTopOf="@id/iv_plateimg"
+                            tools:text="17-123456" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_40sdp"
+                            android:text="@string/name"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_name_cv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_40sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@id/tv_name"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="Ali Mohammad" />
+
+                        <TextView
+                            android:id="@+id/tv_model"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/model"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                            app:layout_constraintRight_toRightOf="@id/tv_name"
+                            app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                        <TextView
+                            android:id="@+id/tv_model_cv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@id/tv_name"
+                            app:layout_constraintTop_toTopOf="@id/tv_model"
+                            tools:text="QX80" />
+
+                        <TextView
+                            android:id="@+id/tv_color"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/car_color"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                            app:layout_constraintTop_toBottomOf="@id/tv_model" />
+
+                        <TextView
+                            android:id="@+id/tv_color_cv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toRightOf="@id/tv_name"
+                            app:layout_constraintTop_toTopOf="@id/tv_color"
+                            tools:text="Red" />
+                        <TextView
+                            android:id="@+id/tv_entryTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/entry_time"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                            app:layout_constraintTop_toBottomOf="@id/tv_color_cv" />
+                        <TextView
+                            android:id="@+id/tv_entryTime_cv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            tools:text="11:12PM"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="@dimen/_5sdp"
+                            app:layout_constraintLeft_toRightOf="@id/tv_entryTime"
+                            app:layout_constraintTop_toBottomOf="@id/tv_color_cv" />
+
+                        <TextView
+                            android:id="@+id/tv_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:text="@string/services"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_name"
+                            app:layout_constraintTop_toBottomOf="@id/tv_entryTime" />
+
+                        <TextView
+                            android:id="@+id/tv_service_cv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/_10sdp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@id/layout_phases"
+                            app:layout_constraintLeft_toLeftOf="@id/tv_service"
+                            app:layout_constraintTop_toBottomOf="@id/tv_service"
+                            tools:text="Red" />
+
+                        <LinearLayout
+                            android:id="@+id/layout_phases"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/_10sdp"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_5sdp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tv_service_cv">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+
+                                    android:id="@+id/tv_phase1_co"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:text="@string/phase_1"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_time_phase_1"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bc_complted_time"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_2sdp"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    tools:text="8:00" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tv_phase2_co"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:text="@string/phase_2"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_time_phase_2"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bc_complted_time"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_2sdp"
+
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    tools:text="8:00" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="@dimen/_5sdp"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tv_phase3_co"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:gravity="center"
+                                    android:text="@string/phase_3"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/tv_time_phase_3"
+                                    android:layout_width="@dimen/_50sdp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/bc_complted_time"
+                                    android:gravity="center"
+                                    android:padding="@dimen/_2sdp"
+                                    android:textColor="@color/green"
+                                    android:textSize="@dimen/_10sdp"
+                                    android:textStyle="bold"
+                                    tools:text="8:00" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </ScrollView>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_35sdp"
+                app:cardCornerRadius="@dimen/_100sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+                <ImageView
+                    android:id="@+id/iv_carModel"
+                    android:layout_width="@dimen/_71sdp"
+                    android:layout_height="@dimen/_71sdp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bmw" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tv_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintLeft_toLeftOf="@id/cardViewInfo"
+                app:layout_constraintRight_toLeftOf="@id/tv_inTime"
+                app:layout_constraintTop_toBottomOf="@id/cardViewInfo" />
+
+            <TextView
+                android:id="@+id/tv_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintLeft_toLeftOf="@id/cardViewInfo"
+                app:layout_constraintRight_toLeftOf="@id/tv_inTime"
+                app:layout_constraintTop_toBottomOf="@id/tv_in" />
+
+            <TextView
+                android:id="@+id/tv_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintLeft_toLeftOf="@id/cardViewInfo"
+                app:layout_constraintRight_toLeftOf="@id/tv_inTime"
+                app:layout_constraintTop_toBottomOf="@id/tv_start" />
+
+            <TextView
+                android:id="@+id/tv_startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintLeft_toRightOf="@id/tv_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_inTime"
+                tools:text="10:22" />
+
+            <TextView
+                android:id="@+id/tv_inTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintLeft_toRightOf="@id/tv_in"
+                app:layout_constraintTop_toBottomOf="@id/cardViewInfo"
+                tools:text="10:22" />
+
+            <TextView
+                android:id="@+id/tv_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintLeft_toRightOf="@id/tv_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_startTime"
+                tools:text="10:22" />
+
+
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/br_gif"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:src="@drawable/br_loading"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+
+
+    <!--<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:background="@drawable/bc_home"-->
+    <!--    tools:context=".feature.sammaryTicket.presentaion.ui.CardSummaryFragment"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+
+    <!--        <LinearLayout-->
+    <!--            android:id="@+id/cv_details"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/_5sdp"-->
+    <!--            android:layout_marginTop="@dimen/_70sdp"-->
+    <!--            android:orientation="vertical"-->
+    <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--            app:layout_constraintRight_toRightOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginRight="@dimen/_5sdp"-->
+    <!--                    android:text="@string/person_name"-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_name"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginLeft="@dimen/_10sdp"-->
+    <!--                    android:layout_marginRight="@dimen/_20sdp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:padding="@dimen/_5sdp"-->
+    <!--                    android:text="@{model.customerName}"-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="@dimen/_5sdp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginRight="@dimen/_5sdp"-->
+    <!--                    android:text="@string/car_type_info"-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_carType"-->
+    <!--                    android:layout_width="@dimen/_160sdp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginLeft="@dimen/_40sdp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:padding="@dimen/_5sdp"-->
+    <!--                    android:text="@{model.carType}"-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="@dimen/_5sdp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginRight="@dimen/_5sdp"-->
+    <!--                    android:text="@string/car_color_details"-->
+    <!--                    android:textSize="@dimen/_10sdp" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_carColor"-->
+    <!--                    android:layout_width="@dimen/_160sdp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginLeft="@dimen/_38sdp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:padding="@dimen/_5sdp"-->
+    <!--                    android:text="@{model.carColor}"-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="@dimen/_5sdp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginRight="@dimen/_5sdp"-->
+    <!--                    android:text="@string/car_id_details"-->
+    <!--                    android:textSize="@dimen/_10sdp" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_carID"-->
+    <!--                    android:layout_width="@dimen/_160sdp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginLeft="@dimen/_56sdp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:padding="@dimen/_5sdp"-->
+    <!--                    android:text="@{model.carId}"-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+    <!--            </LinearLayout>-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginTop="@dimen/_10sdp"-->
+    <!--                android:orientation="horizontal">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginRight="@dimen/_5sdp"-->
+    <!--                    android:text="@string/services"-->
+    <!--                    android:textSize="@dimen/_10sdp" />-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/tv_service"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_gravity="center_vertical"-->
+    <!--                    android:layout_marginLeft="@dimen/_10sdp"-->
+    <!--                    android:layout_marginRight="@dimen/_20sdp"-->
+    <!--                    android:textStyle="bold"-->
+    <!--                    android:padding="@dimen/_5sdp"-->
+    <!--                    tools:text=" Clean clean Clean clean Clean clean Clean clean Clean clean"-->
+    <!--                    android:text=""-->
+    <!--                    android:textSize="@dimen/_10sdp"-->
+
+    <!--                    />-->
+    <!--            </LinearLayout>-->
+    <!--        </LinearLayout>-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_inTime"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/_15sdp"-->
+    <!--            android:layout_marginTop="@dimen/_15sdp"-->
+    <!--            tools:text="@string/in_time"-->
+    <!--            android:text="@{model.insTimeForCV()}"-->
+    <!--            android:textSize="@dimen/_10sdp"-->
+    <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/cv_details"-->
+
+    <!--            />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_startTime"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/_15sdp"-->
+    <!--            android:layout_marginTop="@dimen/_15sdp"-->
+    <!--            tools:text="@string/start_time"-->
+    <!--            android:text="@{model.startTimeForCV}"-->
+    <!--            android:textSize="@dimen/_10sdp"-->
+    <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/tv_inTime" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_endTime"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/_15sdp"-->
+    <!--            android:layout_marginTop="@dimen/_15sdp"-->
+    <!--            tools:text="@string/end_time"-->
+    <!--            android:text="@{model.endTimeForCV}"-->
+    <!--            android:textSize="@dimen/_10sdp"-->
+    <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/tv_startTime" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_teamMember"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/_15sdp"-->
+    <!--            android:layout_marginTop="@dimen/_15sdp"-->
+    <!--            android:text="@string/team_member"-->
+    <!--            android:textSize="@dimen/_10sdp"-->
+    <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/tv_endTime" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_teamMemberList"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/_15sdp"-->
+    <!--            android:layout_marginTop="@dimen/_15sdp"-->
+    <!--            android:background="@drawable/tv_details"-->
+    <!--            android:padding="@dimen/_10sdp"-->
+    <!--            android:singleLine="false"-->
+    <!--            android:textSize="@dimen/_10sdp"-->
+    <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--            app:layout_constraintTop_toBottomOf="@id/tv_teamMember"-->
+    <!--            tools:text="Ali hawari \n mahomud sameh\nmohmoud zacash \n sleman ali-->
+    <!--" />-->
+
+
+    <!--    <pl.droidsonroids.gif.GifImageView-->
+    <!--        android:id="@+id/br_gif"-->
+    <!--        android:layout_width="@dimen/_60sdp"-->
+    <!--        android:layout_height="@dimen/_60sdp"-->
+    <!--        android:src="@drawable/br_loading"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rf_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc_home"
+    tools:context=".feature.home.presentation.ui.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_logo"
+            android:layout_width="@dimen/_211sdp"
+            android:layout_height="@dimen/_41sdp"
+            android:layout_marginBottom="12dp"
+
+            android:src="@drawable/img_logo"
+            app:layout_constraintBottom_toTopOf="@+id/et_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:background="@drawable/et_login2"
+            android:hint="@string/ticket_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+           app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_summary"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/check"
+            app:cardCornerRadius="@dimen/_12sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_logo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_logo">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:src="@drawable/img_calendar" />
+        </androidx.cardview.widget.CardView>
+
+        <RadioGroup
+            android:id="@+id/rb_group"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@id/et_search"
+            app:layout_constraintRight_toRightOf="@id/btn_summary"
+            app:layout_constraintTop_toBottomOf="@id/et_search">
+
+            <RadioButton
+                android:id="@+id/rdb_new"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@color/transparent"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/new_tickets"
+                android:textColor="@drawable/radio_button_text_color"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rdb_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/radio_selector"
+                android:button="@color/transparent"
+                android:checked="false"
+                android:gravity="center"
+                android:text="@string/process"
+                android:textColor="@drawable/radio_button_text_color"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/iv_noti"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:src="@drawable/img_bell"
+            app:layout_constraintLeft_toLeftOf="@id/rb_group"
+            app:layout_constraintTop_toBottomOf="@id/et_search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tickets0"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rb_group"
+            tools:listitem="@layout/row_tiket_new" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tickets_status1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rb_group"
+            tools:listitem="@layout/row_tiket_new" />
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/br_gif"
+            android:layout_width="@dimen/_60sdp"
+            android:layout_height="@dimen/_60sdp"
+            android:src="@drawable/br_loading"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data_found"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
