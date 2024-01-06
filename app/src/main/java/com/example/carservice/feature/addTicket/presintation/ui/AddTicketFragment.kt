@@ -39,7 +39,7 @@ class AddTicketFragment : Fragment() {
         getDataFromBundle(arguments)
         onClickChooseCarModel()
         onClickAddTicket()
-        //  onClickCheckPhoneNumber()
+        onClickCheckPhoneNumber()
         onClickCheckPlateNumber()
 
     }
@@ -131,16 +131,16 @@ class AddTicketFragment : Fragment() {
         }
     }
 
-//    private fun onClickCheckPhoneNumber() {
-//
-//        binding.btnCheck.setOnClickListener {
-//            if (!binding.etPhoneNumber.text.toString().isEmpty()) {
-//                observerPhoneNumberData(formatPhoneNumber(binding.etPhoneNumber.text.toString()))
-//            } else {
-//                binding.etPhoneNumber.error = "add phone number"
-//            }
-//        }
-//    }
+    private fun onClickCheckPhoneNumber() {
+
+        binding.btnCheck.setOnClickListener {
+            if (!binding.etPhoneNumber.text.toString().isEmpty()) {
+                observerPhoneNumberData(formatPhoneNumber(binding.etPhoneNumber.text.toString()))
+            } else {
+                binding.etPhoneNumber.error = "add phone number"
+            }
+        }
+    }
 
     private fun onClickCheckPlateNumber() {
 

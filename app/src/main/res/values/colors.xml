@@ -7,6 +7,7 @@
     <color name="colorAccent">#28262A</color>
     <color name="colorBcMain">#28262A</color>
     <color name="hintYellow">#E4E4E4</color>
+    <color name="bc_color">#E4E4E4</color>
     <color name="red">#F57979</color>
     <color name="redBlack">#EA1A1A</color>
     <color name="gray">#ADADAD</color>

@@ -60,4 +60,8 @@
     <string name="no_data_found">No Data Found</string>
     <string name="normal_customer">Normal Customer</string>
     <string name="entry_time">Entry time</string>
+    <string name="phone">Phone:</string>
+    <string name="last_visit">Last Visit:</string>
+    <string name="number_of_visit">Number of Visit:</string>
+    <string name="voucher_number">Voucher Number:</string>
 </resources>

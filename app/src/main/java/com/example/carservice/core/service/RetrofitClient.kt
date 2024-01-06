@@ -8,7 +8,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
-    private  var BASE_URL = TechnicalData.BASE_URL+TechnicalData.DLL_NAME
+    private var BASE_URL = TechnicalData.BASE_URL
+
+    //http://10.0.0.166:8085/van.dll/
     val okHttpClient = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS) // Set the connection timeout
         .readTimeout(30, TimeUnit.SECONDS)    // Set the read timeout

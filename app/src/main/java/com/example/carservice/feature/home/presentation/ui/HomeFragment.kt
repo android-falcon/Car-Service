@@ -2,6 +2,8 @@ package com.example.carservice.feature.home.presentation.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -53,6 +55,7 @@ class HomeFragment : Fragment() {
 
 
     }
+
 
     private fun checkRbGroup() {
         if (binding.rdbNew.isChecked) {
@@ -151,22 +154,23 @@ class HomeFragment : Fragment() {
 
     @SuppressLint("NotifyDataSetChanged")
     private fun searchingInList() {
-        binding.etSearch.setOnQueryTextListener(object : OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
+        binding.etSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                false
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                filterList(newText)
-                return true
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterList(s.toString())
+                true
             }
+
+            override fun afterTextChanged(s: Editable?) {
+                false
+            }
+
 
         })
-        binding.etSearch.setOnCloseListener {
-            binding.rvTickets0.adapter = ticketAdapterStatus0
-            ticketAdapterStatus0.notifyDataSetChanged()
-            false
-        }
+
 
     }
 
@@ -306,6 +310,7 @@ class HomeFragment : Fragment() {
         val timePhase1 = ticketResponse.timePhase1
         val timePhase2 = ticketResponse.timePhase2
         val timePhase3 = ticketResponse.timePhase2
+        val holdNumber=ticketResponse.holdNumber
 
         bundle.putString("carColor", carColor)
         bundle.putString("carId", carId)
@@ -328,6 +333,7 @@ class HomeFragment : Fragment() {
         bundle.putString("carImg", carImg)
         bundle.putString("phase", phase)
         bundle.putString("time", time)
+        bundle.putString("holdNumber", holdNumber)
         if (timePhase1.equals("")) {
             bundle.putString("timePhase1", "")
         } else {

@@ -26,11 +26,11 @@ class CarFragment : Fragment() {
     private var phoneNumber: String = ""
     private var plateNumber: String = ""
     private val bundle = Bundle()
+    private var key = ""
 
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
 
         binding = FragmentCarBinding.inflate(layoutInflater)
@@ -51,6 +51,7 @@ class CarFragment : Fragment() {
             phoneNumber = bundle.getString("phoneNumber", "")
             plateNumber = bundle.getString("plateNumber", "")
 
+
         }
 
     }
@@ -64,6 +65,7 @@ class CarFragment : Fragment() {
                     viewModel.carListLiveData.observe(viewLifecycleOwner) {
                         if (it != null) {
                             initAdapter(it)
+
                         }
                     }
                     viewLifecycleOwner.lifecycleScope.launch {
@@ -121,15 +123,18 @@ class CarFragment : Fragment() {
         adapter = CarAdapter(carList, ::goToAddTicketWithData)
         binding.rvTickets.adapter = adapter
         adapter.notifyDataSetChanged()
+        //set last visit and number of visit
+        binding.tvLastVisit.text = "Last Visit: ${carResponses.get(0).lastVisitDate}"
+        binding.tvNumVisit.text = "Number of Visit: ${carResponses.get(0).numberOfVisit}"
 
     }
 
     private fun goToAddTicketWithData(carResponse: CarResponse) {
-        bundle.putParcelable("carResponse",carResponse)
-        bundle.putString("key","1")
+        bundle.putParcelable("carResponse", carResponse)
+        bundle.putString("key", "1")
         Log.d("TAGetDataFromBundle", "goToAddTicketWithData:$carResponse ")
-        val addTicketFragment=AddTicketFragment()
-        addTicketFragment.arguments=bundle
+        val addTicketFragment = AddTicketFragment()
+        addTicketFragment.arguments = bundle
         findNavController().navigate(R.id.action_carFragment_to_addTicketFragment2, bundle)
 
     }

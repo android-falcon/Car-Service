@@ -191,6 +191,7 @@ class CardSummaryFragment : Fragment() {
             val timePhase1 = arguments.getString("timePhase1")
             val timePhase2 = arguments.getString("timePhase2")
             val timePhase3 = arguments.getString("timePhase3")
+            val holdNumber = arguments.getString("holdNumber")
             ticket = TicketResponse(
                 carColor = carColor ?: "",
                 carId = carId ?: "",
@@ -216,7 +217,8 @@ class CardSummaryFragment : Fragment() {
                 timePhase3ForCV = timePhase3 ?: "",
                 timePhase3 = "",
                 timePhase1 = "",
-                timePhase2 = ""
+                timePhase2 = "",
+                holdNumber = holdNumber ?: ""
             )
         }
 

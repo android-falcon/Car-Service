@@ -18,8 +18,14 @@ data class CarResponse(
     @SerializedName("CAR_COLOR")
     val carColor: String?,
     @SerializedName("CAR_MODEL")
-    val carModel: String?
-): Parcelable{
+    val carModel: String?,
+    @SerializedName("NUMBEROFVISIT")
+    val numberOfVisit: String?,
+    @SerializedName("LASTVISITDATE")
+    val lastVisitDate: String?,
+
+
+    ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
         parcel.readString(),
@@ -27,8 +33,12 @@ data class CarResponse(
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
-    ) {
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+
+
+        ) {
     }
 
     override fun describeContents(): Int {
@@ -43,6 +53,9 @@ data class CarResponse(
         dest.writeString(carType)
         dest.writeString(carColor)
         dest.writeString(carModel)
+        dest.writeString(numberOfVisit)
+        dest.writeString(lastVisitDate)
+
     }
 
     companion object CREATOR : Parcelable.Creator<CarResponse> {

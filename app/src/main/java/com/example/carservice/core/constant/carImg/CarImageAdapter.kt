@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.carservice.databinding.RowCarModelBinding
+import com.example.carservice.feature.home.domain.model.TicketResponse
 
 
 class CarImageAdapter(
@@ -32,5 +33,10 @@ class CarImageAdapter(
         holder.itemView.setOnClickListener {
             onClick(item)
         }
+    }
+    fun setFilteredList(list: List<CarImageModel>) {
+        items.clear()
+        items.addAll(list)
+        notifyDataSetChanged()
     }
 }

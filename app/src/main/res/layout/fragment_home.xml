@@ -25,7 +25,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <androidx.appcompat.widget.SearchView
+        <EditText
+            android:drawableStart="@drawable/img_search"
             android:id="@+id/et_search"
             android:layout_width="0dp"
             android:layout_height="@dimen/_30sdp"

@@ -64,23 +64,21 @@ class DetailsFragment : Fragment() {
     }
 
     private fun initObserverTime() {
-        if(ticket.status.equals("0")){
+        if (ticket.status.equals("0")) {
             return
-        }
-        else if(ticket.status.equals("1")){
+        } else if (ticket.status.equals("1")) {
             try {
-                viewModel.getTime(TechnicalData.COMPANY_NUMBER,voucherNumber)
+                viewModel.getTime(TechnicalData.COMPANY_NUMBER, voucherNumber)
                 viewLifecycleOwner.lifecycleScope.launch {
-                    viewModel.timeLiveData.observe (viewLifecycleOwner){
+                    viewModel.timeLiveData.observe(viewLifecycleOwner) {
                         showTime(it.get(0))
                     }
                 }
-            }catch (e:Exception){
+            } catch (e: Exception) {
 
             }
 
-        }
-        else {
+        } else {
             return
         }
 
@@ -149,7 +147,8 @@ class DetailsFragment : Fragment() {
 
         }
     }
-    private fun showTime(time:TimeModel) {
+
+    private fun showTime(time: TimeModel) {
         if (ticket.phase.equals("1")) {
             binding.tvPhase1Co.setTextColor(Color.rgb(124, 187, 237))
             val t = time.time.toInt()
@@ -434,6 +433,7 @@ class DetailsFragment : Fragment() {
             val timePhase1 = bundle.getString("timePhase1")
             val timePhase2 = bundle.getString("timePhase2")
             val timePhase3 = bundle.getString("timePhase2")
+            val holdNumber = bundle.getString("holdNumber")
             ticket = TicketResponse(
                 carColor = carColor ?: "",
                 carId = carId ?: "",
@@ -459,7 +459,8 @@ class DetailsFragment : Fragment() {
                 timePhase2 = timePhase2 ?: "",
                 timePhase1ForCV = "",
                 timePhase2ForCV = "",
-                timePhase3ForCV = ""
+                timePhase3ForCV = "",
+                holdNumber = holdNumber.toString()
             )
         }
         checkPhase()
