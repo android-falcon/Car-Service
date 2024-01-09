@@ -251,7 +251,7 @@ class CreateTicketFragment : Fragment() {
             val carImg = bundle.getString("carImg")
             val note = bundle.getString("note")
             val list = ArrayList<ServiceBodyModel>()
-            list.add(ServiceBodyModel(itemCode = "10003", itemName = "wash"))
+//            list.add(ServiceBodyModel(itemCode = "10003", itemName = "wash"))
             val serviceDtlModel = ServiceDtlModel(dtl = list)
             Log.d("TAGlist", "getTicketInfo:${serviceDtlModel} ")
             ticketBody = TicketBody(

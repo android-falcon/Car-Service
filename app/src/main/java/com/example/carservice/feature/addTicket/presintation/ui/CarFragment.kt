@@ -58,6 +58,7 @@ class CarFragment : Fragment() {
 
     private fun initObserver() {
         if (!plateNumber.equals("")) {
+            key="1"
 
             try {
                 viewLifecycleOwner.lifecycleScope.launch {
@@ -86,7 +87,8 @@ class CarFragment : Fragment() {
                 showErrorSweet(e.localizedMessage)
             }
 
-        } else if (!phoneNumber.equals("")) {
+        }
+        else if (!phoneNumber.equals("")) {
 
             try {
                 viewLifecycleOwner.lifecycleScope.launch {

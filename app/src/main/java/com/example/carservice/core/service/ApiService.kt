@@ -21,41 +21,41 @@ import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface ApiService {
-    //@GET("/van.dll/GetCSSUserInfo")
-    @GET("/GetCSSUserInfo")
+    @GET("/van.dll/GetCSSUserInfo")
+//    @GET("/GetCSSUserInfo")
     suspend fun getUserInfo(
         @Query("CONO") cono: String,
         @Query("USERNO") userno: String
     ): Response<List<UserModel>>
 
-    //@GET("/van.dll/GetCssAllTicketByStatues")
-    @GET("/GetCssAllTicketByStatues")
+    @GET("/van.dll/GetCssAllTicketByStatues")
+//    @GET("/GetCssAllTicketByStatues")
     suspend fun getTicketByStatus(
         @Query("cono") cono: String,
         @Query("STATUS") status: String
     ): Response<List<TicketResponse>>
 
-    //@GET("/van.dll/GetCssAllTicket")
-    @GET("/GetCssAllTicket")
+    @GET("/van.dll/GetCssAllTicket")
+//    @GET("/GetCssAllTicket")
     suspend fun getTicketsByDate(
         @Query("CONO") cono: String,
         @Query("VHFDATE") vhfDate: String
     ): Response<List<TicketResponse>>
 
-    //@GET("/van.dll/GetCssEmployee")
-    @GET("/GetCssEmployee")
+    @GET("/van.dll/GetCssEmployee")
+//    @GET("/GetCssEmployee")
     suspend fun getEmployee(
         @Query("CONO") cono: String,
         @Query("PHASE") phase: String
     ): Response<List<EmployeeModel>>
 
-    //@GET("/van.dll/GetCssServices")
-    @GET("/GetCssServices")
+    @GET("/van.dll/GetCssServices")
+//    @GET("/GetCssServices")
     suspend fun getService(@Query("CONO") cono: String): Response<List<ServiceModel>>
 
 
-    // @GET("/van.dll/SaveNewTicket")
-    @GET("/SaveNewTicket")
+     @GET("/van.dll/SaveNewTicket")
+//    @GET("/SaveNewTicket")
     suspend fun saveTicket(
         @Query("CONO") cono: String,
         @Query("PHONE_NUMBER") phoneNumber: String,
@@ -72,15 +72,15 @@ interface ApiService {
 
         ): Response<StatusModel>
 
-    // @GET("/van.dll/GetCssTicketService")
-    @GET("/GetCssTicketService")
+     @GET("/van.dll/GetCssTicketService")
+//    @GET("/GetCssTicketService")
     suspend fun getServiceByVoucherNumber(
         @Query("CONO") cono: String,
         @Query("VHFNO") voucherNumber: String
     ): Response<List<ServiceResponse>>
 
-    //@GET("/van.dll/StartTicket")
-    @GET("/StartTicket")
+    @GET("/van.dll/StartTicket")
+//    @GET("/StartTicket")
     suspend fun startTicket(
         @Query("CONO") cono: String,
         @Query("TEAM") team: String,
@@ -88,44 +88,44 @@ interface ApiService {
         @Query("PHASE") phase: String
     ): Response<StatusModel>
 
-    //@GET("/van.dll/EndTicket")
-    @GET("/EndTicket")
+    @GET("/van.dll/EndTicket")
+//    @GET("/EndTicket")
     suspend fun endTicket(
         @Query("cono") cono: String,
         @Query("TICKETNO") ticketNumber: String
     ): Response<StatusModel>
 
-    // @GET("/van.dll/CancelTicket")
-    @GET("/CancelTicket")
+     @GET("/van.dll/CancelTicket")
+//    @GET("/CancelTicket")
     suspend fun cancelTicket(
         @Query("cono") cono: String,
         @Query("TICKETNO") ticketNumber: String,
         @Query("NOTE") note: String
     ): Response<StatusModel>
 
-    //@GET("/van.dll/GetCustomerInfo")
-    @GET("/GetCustomerInfo")
+    @GET("/van.dll/GetCustomerInfo")
+//    @GET("/GetCustomerInfo")
     suspend fun getCustomerByPhoneNumber(
         @Query("cono") cono: String,
         @Query("PHONE") ticketNumber: String,
     ): Response<List<CarResponse>>
 
-    //@GET("/van.dll/GetCustomerInfo")
-    @GET("/GetCustomerInfo")
+    @GET("/van.dll/GetCustomerInfo")
+//    @GET("/GetCustomerInfo")
     suspend fun getCustomerByPlateNumber(
         @Query("cono") cono: String,
         @Query("PLATE") plateNumber: String
     ): Response<List<CarResponse>>
 
-    // @GET("/van.dll/GetCssTicketTeam")
-    @GET("/GetCssTicketTeam")
+     @GET("/van.dll/GetCssTicketTeam")
+//    @GET("/GetCssTicketTeam")
     suspend fun getTeamList(
         @Query("cono") cono: String,
         @Query("VHFNO") voucherNumber: String
     ): Response<List<EmployeeResponse>>
 
-    //@GET("/van.dll/GetTicket")
-    @GET("/GetTicket")
+    @GET("/van.dll/GetTicket")
+//    @GET("/GetTicket")
     suspend fun getTime(
         @Query("CONO") cono: String,
         @Query("VHFNO") voucherNumber: String

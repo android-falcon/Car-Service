@@ -74,7 +74,7 @@ object CarGenerate {
 
     }
 
-    fun getCarByName(id: String): CarImageModel {
+    fun getCarByID(id: String): CarImageModel {
         for (item in carList()) {
             if (item.id.equals(id)) {
                 return item

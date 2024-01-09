@@ -11,7 +11,7 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-            android:id="@+id/summary_ticket"
+        android:id="@+id/summary_ticket"
         android:name="com.example.carservice.feature.sammaryTicket.presentaion.ui.SummaryTicketFragment"
         android:label="@string/summary_ticket"
         tools:layout="@layout/fragment_summary_ticket" />
@@ -38,7 +38,7 @@
         android:id="@+id/addTicketFragment"
         android:name="com.example.carservice.feature.addTicket.presintation.ui.AddTicketFragment"
         android:label="fragment_add_ticket"
-        tools:layout="@layout/fragment_add_ticket" >
+        tools:layout="@layout/fragment_add_ticket">
         <action
             android:id="@+id/action_addTicketFragment_to_carModelListFragment"
             app:destination="@id/carModelListFragment" />
@@ -48,6 +48,9 @@
         <action
             android:id="@+id/action_addTicketFragment_to_carFragment"
             app:destination="@id/carFragment" />
+        <action
+            android:id="@+id/action_addTicketFragment_to_checkPhoneNumberFragment"
+            app:destination="@id/checkPhoneNumberFragment" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -63,7 +66,7 @@
         android:id="@+id/carFragment"
         android:name="com.example.carservice.feature.addTicket.presintation.ui.CarFragment"
         android:label="fragment_car"
-        tools:layout="@layout/fragment_car" >
+        tools:layout="@layout/fragment_car">
         <action
             android:id="@+id/action_carFragment_to_addTicketFragment"
             app:destination="@id/addTicketFragment" />
@@ -80,9 +83,23 @@
         android:id="@+id/carModelListFragment"
         android:name="com.example.carservice.feature.carModelList.CarModelListFragment"
         android:label="fragment_car_model_list"
-        tools:layout="@layout/fragment_car_model_list" >
+        tools:layout="@layout/fragment_car_model_list">
         <action
             android:id="@+id/action_carModelListFragment_to_addTicketFragment"
             app:destination="@id/addTicketFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/checkPhoneNumberFragment"
+        android:name="com.example.carservice.feature.addTicket.presintation.ui.CheckPhoneNumberFragment"
+        android:label="fragment_check_phone_number"
+        tools:layout="@layout/fragment_check_phone_number">
+        <action
+            android:id="@+id/action_checkPhoneNumberFragment_to_addTicketFragment"
+            app:destination="@id/addTicketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTicketFromPhoneNumberFragment"
+        android:name="com.example.carservice.feature.addTicket.presintation.ui.AddTicketFromPhoneNumberFragment"
+        android:label="fragment_add_ticket_from_phone_number"
+        tools:layout="@layout/fragment_add_ticket_from_phone_number" />
 </navigation>

@@ -11,7 +11,6 @@ object TechnicalData {
 
     private const val PREFERENCES_NAME = "TechnicalDataPreferences"
 
-    // Initialize SharedPreferences
     private fun getSharedPreferences(context: Context): SharedPreferences {
         return context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
     }

@@ -102,18 +102,12 @@ class AddTicketFragment : Fragment() {
 
         } else if (carResponse.getString("key").toString().equals("1")) {
             Log.d("TAGsetDataToField", "setDataToField:${carResponse} ")
-//                binding.etPhoneNumber.setText(carResponse.getString("phoneNumber", ""))
-//                binding.etCarColor.setText(carResponse.getString("carColor", ""))
-//                binding.etUserName.setText(carResponse.getString("customerName", ""))
-//                binding.etCarModel.setText(carResponse.getString("carType", ""))
-//                binding.etCarType.setText(carResponse.getString("carImg"))
-//                binding.etPlateNumber.setText(carResponse.getString("carImg"))
             val response: CarResponse = carResponse.getParcelable("carResponse")!!
             Log.d("TAGsetDataToField", "setDataToField:${response}")
             val splitParts = response.carId.toString().split('-')
             val code = splitParts[0]
             val plateNumber = splitParts[1]
-            imageModel = CarGenerate.getCarByName(response.carModel!!)
+            imageModel = CarGenerate.getCarByID(response.carModel!!)
             binding.etPlateNumber.setText(plateNumber)
             binding.etCode.setText(code)
             binding.etPhoneNumber.setText(response.phoneNumber)
@@ -128,6 +122,30 @@ class AddTicketFragment : Fragment() {
                 binding.rbtnBusinessBark.isChecked = false
                 binding.rbtnBusinessBark.isChecked = true
             }
+        }
+        //get data from check phone number
+        else if (carResponse.getString("key").toString().equals("1001")) {
+            binding.etCarType.setText(carResponse.getString("TypeCar", ""))
+            imageModel = CarImageModel(
+                id = carResponse.getString("id", "-1"),
+                img = carResponse.getInt("img", 0),
+                name = carResponse.getString("TypeCar", "")
+            )
+            Log.d("TAGImageModel", "ImageModel: ${imageModel}")
+            val bundle = carResponse.getBundle("bundle")
+            Log.d("TAGBundle", "bundle:${bundle} ")
+            val plateNumber = bundle?.getString("PlateNumber")
+            val carModel = bundle?.getString("CarModel")
+            val userName = bundle?.getString("UserName")
+            val code = bundle?.getString("Code")
+            val phoneNumber = bundle?.getString("PhoneNumber")
+
+            binding.etPlateNumber.setText(plateNumber)
+            binding.etCarModel.setText(carModel)
+            binding.etUserName.setText(userName)
+            binding.etCode.setText(code)
+            binding.etPhoneNumber.setText(phoneNumber)
+
         }
     }
 
@@ -218,7 +236,10 @@ class AddTicketFragment : Fragment() {
         bundle.putString("phoneNumber", phoneNumber)
         var carFragment = CarFragment()
         carFragment.arguments = bundle
-        findNavController().navigate(R.id.action_addTicketFragment_to_carModelListFragment)
+        findNavController().navigate(
+            R.id.action_addTicketFragment_to_checkPhoneNumberFragment,
+            bundle
+        )
     }
 
     private fun goToCarListPagePlateNumber(phoneNumber: String) {
